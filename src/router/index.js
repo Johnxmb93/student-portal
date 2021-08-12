@@ -3,7 +3,8 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
-import ResumeIndex from "../views/ResumeIndex.vue";
+import ShowResume from "../views/ShowResume.vue";
+import UpdateResume from "../views/UpdateResume.vue";
 
 Vue.use(VueRouter);
 
@@ -31,7 +32,8 @@ const routes = [
     name: "Logout",
     component: Logout,
   },
-  { path: "/resume", name: "resumeindex", component: ResumeIndex },
+  { path: "/resume/:id", name: "resume-index", component: ShowResume },
+  { path: "/resume/:id/edit", name: "update", component: UpdateResume },
 ];
 
 const router = new VueRouter({

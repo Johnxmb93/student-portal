@@ -12,12 +12,15 @@ export default {
       // resumes: [],
       student: {},
       experience: {},
+      skill: {},
+      capstone: {},
     };
   },
   created: function () {
-    this.showResume();
+    this.showStudent();
     this.showExperience();
     this.showSkill();
+    this.showCapstone();
   },
   methods: {
     // indexResume: function () {
