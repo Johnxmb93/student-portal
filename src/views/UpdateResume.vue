@@ -5,6 +5,7 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
+        <h1>Education</h1>
         Start Date:
         <input type="text" v-model="currentEducationParams.start_date" />
         End Date:
@@ -23,6 +24,7 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
+        <h1>Experience</h1>
         Start Date:
         <input type="text" v-model="currentExperienceParams.start_date" />
         End Date:
@@ -40,6 +42,7 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
+        <h1>Capstone</h1>
         Name:
         <input type="text" v-model="currentCapstoneParams.name" />
         Description:
@@ -55,6 +58,7 @@
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
+        <h1>Skills</h1>
         Skill:
         <input type="text" v-model="currentSkillParams.skill_id" />
         Description:
