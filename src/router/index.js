@@ -3,6 +3,7 @@ import VueRouter from "vue-router";
 import Home from "../views/Home.vue";
 import Login from "../views/Login.vue";
 import Logout from "../views/Logout.vue";
+import ResumeIndex from "../views/ResumeIndex.vue";
 
 Vue.use(VueRouter);
 
@@ -30,6 +31,7 @@ const routes = [
     name: "Logout",
     component: Logout,
   },
+  { path: "/resume", name: "resumeindex", component: ResumeIndex },
 ];
 
 const router = new VueRouter({
