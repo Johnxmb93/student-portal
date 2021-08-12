@@ -1,5 +1,5 @@
 <template>
-  <div class="resume-index">
+  <div class="resumeindex">
     <!-- <p v-for="resume in resumes" :key="resume.id">{{ resumes }}</p> -->
   </div>
 </template>
