@@ -35,6 +35,7 @@
         <input type="text" v-model="currentExperienceParams.company" />
         Details:
         <input type="text" v-model="currentExperienceParams.details" />
+         <input type="submit" value="submit" />
       </form>
     </div>
     <div>
@@ -51,6 +52,7 @@
         <input type="text" v-model="currentCapstoneParams.url" />
         Picture:
         <input type="text" v-model="currentCapstoneParams.screenshot" />
+         <input type="submit" value="submit" />
       </form>
     </div>
     <div>
@@ -61,7 +63,7 @@
         <h1>Skills</h1>
         Skill:
         <input type="text" v-model="currentSkillParams.skill_id" />
-        Description:
+         <input type="submit" value="submit" />
       </form>
     </div>
   </div>
@@ -110,28 +112,34 @@ export default {
         console.log(response.data);
       });
     },
+    // #ahagha
+    addSkill: function () {
+      axios.post("/skills" + this.currentSkillParams).then((response) => {
+         console.log(response.data,this.currentSkillParams);
+      },
+      )},
     showExperience: function () {
       axios.get("/experiences/" + this.$route.params.id).then((response) => {
-        this.experience = response.data;
-        console.log(this.experience);
+        this.currentExperienceParams = response.data;
+        console.log(this.currentExperienceParams);
       });
     },
     showSkill: function () {
       axios.get("/skills/" + this.$route.params.id).then((response) => {
-        this.skill = response.data;
-        console.log(this.skill);
+        this.currentSkillParams = response.data;
+        console.log(this.currentSkillParams);
       });
     },
     showCapstone: function () {
       axios.get("/capstones/" + this.$route.params.id).then((response) => {
-        this.capstone = response.data;
-        console.log(this.capstone);
+        this.currentCapstoneParams = response.data;
+        console.log(this.currentCapstoneParams);
       });
     },
     showEducation: function () {
       axios.get("/education/" + this.$route.params.id).then((response) => {
-        this.education = response.data;
-        console.log(this.education);
+        this.currentEducationParams = response.data;
+        console.log(this.currentEducationParams);
       });
     },
   },
