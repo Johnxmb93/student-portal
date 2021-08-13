@@ -35,7 +35,7 @@
         <input type="text" v-model="currentExperienceParams.company" />
         Details:
         <input type="text" v-model="currentExperienceParams.details" />
-         <input type="submit" value="submit" />
+        <input type="submit" value="submit" />
       </form>
     </div>
     <div>
@@ -52,7 +52,7 @@
         <input type="text" v-model="currentCapstoneParams.url" />
         Picture:
         <input type="text" v-model="currentCapstoneParams.screenshot" />
-         <input type="submit" value="submit" />
+        <input type="submit" value="submit" />
       </form>
     </div>
     <div>
@@ -63,7 +63,7 @@
         <h1>Skills</h1>
         Skill:
         <input type="text" v-model="currentSkillParams.skill_id" />
-         <input type="submit" value="submit" />
+        <input type="submit" value="submit" />
       </form>
     </div>
   </div>
@@ -115,9 +115,9 @@ export default {
     // #ahagha
     addSkill: function () {
       axios.post("/skills" + this.currentSkillParams).then((response) => {
-         console.log(response.data,this.currentSkillParams);
-      },
-      )},
+        console.log(response.data, this.currentSkillParams);
+      });
+    },
     showExperience: function () {
       axios.get("/experiences/" + this.$route.params.id).then((response) => {
         this.currentExperienceParams = response.data;

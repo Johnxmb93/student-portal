@@ -62,7 +62,7 @@ export default {
   },
   methods: {
     showStudent: function () {
-      axios.get("/students/" + this.$route.params.id).then((response) => {
+      axios.get("/resumes/" + this.$route.params.id).then((response) => {
         this.student = response.data;
         console.log(this.student);
       });
