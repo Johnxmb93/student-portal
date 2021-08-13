@@ -112,6 +112,7 @@ export default {
         console.log(response.data);
       });
     },
+    // #ahagha
     addSkill: function () {
       axios.post("/skills" + this.currentSkillParams).then((response) => {
          console.log(response.data,this.currentSkillParams);
