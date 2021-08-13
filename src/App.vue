@@ -11,6 +11,7 @@
       |
       <router-link to="/resume">Resume</router-link>
     </div>
+
     <router-view />
   </div>
 </template>
@@ -37,3 +38,12 @@
   color: #42b983;
 }
 </style>
+<script>
+export default {
+  methods: {
+    getUserId: function () {
+      return localStorage.getItem("student_id");
+    },
+  },
+};
+</script>
