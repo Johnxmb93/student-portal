@@ -1,21 +1,25 @@
 <template>
   <div class="resume-index">
     <h2>Student:</h2>
-    <p>{{ student.first_name }}</p>
-    <p>{{ student.last_name }}</p>
-    <p>{{ student.skills[0].name }}</p>
+    <p>{{ student.first_name }} {{ student.last_name }}</p>
+
+    <p>Skills:</p>
+    <li v-for="skill in student.skills" :key="skill.id">{{ skill.name }}</li>
+
     <hr />
     <h3>Education:</h3>
-    <p>{{ student.education }}</p>
+    <div v-for="education in student.education" :key="education.id">
+      <p>{{ education.university_name }}</p>
+      <p>{{ education.details }}</p>
+      <p>{{ education.start_date }} - {{ education.end_date }}</p>
+    </div>
 
     <hr />
     <h3>Experience:</h3>
-    <p>{{ experience.start_date }}</p>
-    <p>{{ experience.end_date }}</p>
     <p>{{ experience.job_title }}</p>
     <p>{{ experience.company }}</p>
     <p>{{ experience.details }}</p>
-    <hr />
+    <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
   </div>
 </template>
 <script>
