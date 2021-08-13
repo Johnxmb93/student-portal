@@ -1,25 +1,21 @@
 <template>
   <div class="resume-index">
-    <h2>{{ education.student }}</h2>
-    <p>{{ education.start_date }}</p>
-    <p>{{ education.end_date }}</p>
-    <p>{{ education.degree }}</p>
-    <p>{{ education.university_name }}</p>
-    <p>{{ education.details }}</p>
+    <h2>Student:</h2>
+    <p>{{ student.first_name }}</p>
+    <p>{{ student.last_name }}</p>
+    <p>{{ student.skills[0].name }}</p>
     <hr />
-    <p>{{ skill.name }}</p>
+    <h3>Education:</h3>
+    <p>{{ student.education }}</p>
+
     <hr />
-    <p>{{ captone.name }}</p>
-    <p>{{ captone.description }}</p>
-    <p>{{ captone.url }}</p>
-    <p>{{ captone.screenshot }}</p>
-    <hr />
-    <h2>{{ experience.student }}</h2>
+    <h3>Experience:</h3>
     <p>{{ experience.start_date }}</p>
     <p>{{ experience.end_date }}</p>
     <p>{{ experience.job_title }}</p>
     <p>{{ experience.company }}</p>
     <p>{{ experience.details }}</p>
+    <hr />
   </div>
 </template>
 <script>
@@ -28,11 +24,11 @@ import axios from "axios";
 export default {
   data: function () {
     return {
-      student: {},
-      experience: {},
-      skill: {},
-      capstone: {},
-      education: {},
+      student: [],
+      experience: [],
+      skill: [],
+      capstone: [],
+      education: [],
     };
   },
   created: function () {
