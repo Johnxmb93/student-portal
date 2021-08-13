@@ -54,7 +54,7 @@
       </form>
     </div>
     <div>
-      <form v-on:submit.prevent="updateSkills()">
+      <form v-on:submit.prevent="updateSkill()">
         <ul>
           <li v-for="error in errors" v-bind:key="error">{{ error }}</li>
         </ul>
@@ -78,8 +78,8 @@ export default {
       currentCapstoneParams: {},
       experience: [],
       education: [],
-      skills: [],
-      capstones: [],
+      skill: [],
+      capstone: [],
       errors: [],
     };
   },
@@ -100,7 +100,7 @@ export default {
         console.log(response.data);
       });
     },
-    updateSkills: function () {
+    updateSkill: function () {
       axios.patch(`/skills/${this.$route.params.id}`, this.currentSkillParams).then((response) => {
         console.log(response.data);
       });
@@ -130,8 +130,8 @@ export default {
     },
     showEducation: function () {
       axios.get("/education/" + this.$route.params.id).then((response) => {
-        this.capstone = response.data;
-        console.log(this.capstone);
+        this.education = response.data;
+        console.log(this.education);
       });
     },
   },
