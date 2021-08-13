@@ -1,25 +1,31 @@
 <template>
   <div class="resume-index">
     <h2>Student:</h2>
-    <p>{{ student.first_name }} {{ student.last_name }}</p>
 
-    <p>Skills:</p>
-    <li v-for="skill in student.skills" :key="skill.id">{{ skill.name }}</li>
+    <div v-if="$parent.getUserId() == student.id">
+      <p>Name: {{ student.first_name }} {{ student.last_name }}</p>
 
-    <hr />
-    <h3>Education:</h3>
-    <div v-for="education in student.education" :key="education.id">
-      <p>{{ education.university_name }}</p>
-      <p>{{ education.details }}</p>
-      <p>{{ education.start_date }} - {{ education.end_date }}</p>
+      <p>Skills:</p>
+      <li v-for="skill in student.skills" :key="skill.id">{{ skill.name }}</li>
+
+      <router-link v-bind:to="`/resume/${student.id}/edit`">add</router-link>
+
+      <hr />
+      <h3>Education:</h3>
+      <div v-for="education in student.education" :key="education.id">
+        <p>University: {{ education.university_name }}</p>
+        <p>Details: {{ education.details }}</p>
+        <p>Through: {{ education.start_date }} - {{ education.end_date }}</p>
+      </div>
+      <router-link v-bind:to="`/resume/${student.id}/edit`">edit</router-link>
+      <hr />
+      <h3>Experience:</h3>
+      <p>Job Title: {{ experience.job_title }}</p>
+      <p>Company: {{ experience.company }}</p>
+      <p>Details: {{ experience.details }}</p>
+      <p>Through: {{ experience.start_date }} - {{ experience.end_date }}</p>
+      <router-link v-bind:to="`/resume/${student.id}/edit`">edit</router-link>
     </div>
-
-    <hr />
-    <h3>Experience:</h3>
-    <p>{{ experience.job_title }}</p>
-    <p>{{ experience.company }}</p>
-    <p>{{ experience.details }}</p>
-    <p>{{ experience.start_date }} - {{ experience.end_date }}</p>
   </div>
 </template>
 <script>
