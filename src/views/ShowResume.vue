@@ -25,6 +25,18 @@
       <p>Details: {{ experience.details }}</p>
       <p>Through: {{ experience.start_date }} - {{ experience.end_date }}</p>
       <router-link v-bind:to="`/resume/${student.id}/edit`">edit</router-link>
+      <hr />
+      <h3>Capstones:</h3>
+      <div v-for="capstones in student.capstones" :key="capstones.id">
+        <p>Name: {{ capstones.name }}</p>
+        <p>Description: {{ capstones.description }}</p>
+        <p>Url: {{ capstones.url }}</p>
+        Photo:
+        <p><img v-bind:src="capstones.screenshot" /></p>
+        <p>
+          <router-link v-bind:to="`/resume/${student.id}/edit`">edit</router-link>
+        </p>
+      </div>
     </div>
   </div>
 </template>
