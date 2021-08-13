@@ -33,7 +33,7 @@ export default {
         .then((response) => {
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
-          localStorage.setItem("user_id", response.data.user_id);
+          localStorage.setItem("student_id", response.data.student_id);
           this.$router.push("/");
           console.log("Logged in Successfully", response.data);
         })
